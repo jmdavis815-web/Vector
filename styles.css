@@ -400,7 +400,6 @@ a:focus-visible, button:focus-visible {
 #inactive-tab {
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
-  border-color: #00a008;
 }
 
 /* -------- DUPLICATED VISIBILITY BLOCKS (with !important) --------
