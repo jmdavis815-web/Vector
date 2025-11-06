@@ -36,10 +36,10 @@ a:focus-visible, button:focus-visible {
     transition: 0.3s;
   }
   .power-link:hover {
-    color: #00e5ff;
-    border-bottom: 2px solid #00e5ff;
-    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00c853;
-    transform: scale(1.05);
+    color: white; 
+  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
+  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
+  text-decoration: none;
   }
   /* add any other :hover rules here */
 }
@@ -69,18 +69,8 @@ a:focus-visible, button:focus-visible {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
 }
-
-.power-link:hover {
-  color: white; 
-  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
-  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px black;
-  transform: scale(1.05);
-  text-decoration: none;
-}
-
 
 /*==== Nav ==== */
 #siteNav {
@@ -104,12 +94,6 @@ a:focus-visible, button:focus-visible {
   font-weight: 700;
 }
 
-#nav-links:hover {
-  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
-  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px;
-  transition: 0.3s;
-}
-
 #drop-menu {
   z-index: 4100;
   background: linear-gradient(90deg, #80e766, #00a008);
@@ -121,13 +105,6 @@ a:focus-visible, button:focus-visible {
   color: white;
   font-weight: 700;
   z-index: 4100;
-}
-
-#list-item:hover {
-   background: linear-gradient(90deg, #80e766, #00a008);
-  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
-  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px white;
-  transition: 0.3s;
 }
 
 #nav-button {
