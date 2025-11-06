@@ -52,7 +52,7 @@ a:focus-visible, button:focus-visible {
   -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
   font-weight: 700;
   text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
-  transition: 0.5s;
+  transition: 0.3s;
   box-shadow: 4px 4px 10px black, 4px 4px 10px green;
   }
 }
