@@ -6,6 +6,10 @@ body {
   background: linear-gradient(90deg, white, #3a3a3a91);;
 }
 
+img {
+  max-width: 300px;
+}
+
 /* Disable hover effects while .no-hover is active */
 .no-hover *:hover {
   pointer-events: none !important;

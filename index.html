@@ -182,7 +182,7 @@
             trust Vector Electrical Group to deliver exceptional results.
           </p>
         </div>
-        <div class="col-8 col-md-4 col-lg-4">
+        <div class="col-12 col-md-4 col-lg-4 text-center">
           <img src="logo-tab-2.webp" width="100%">
         </div>
         <div class="col-12 col-md-8 col-lg-8">
@@ -278,18 +278,7 @@
     lastScrollY = window.scrollY;
   });
 
-  // Close navbar/collapse on outside click
-  document.addEventListener('click', (event) => {
-    const navCollapse = document.querySelector('.navbar-collapse');
-    const toggleButton = document.querySelector('.navbar-toggler');
-    const isOpen = navCollapse?.classList.contains('show');
-    const clickedInsideNav = event.target.closest('.navbar-collapse');
-    const clickedToggle = event.target.closest('.navbar-toggler');
-    if (isOpen && !clickedInsideNav && !clickedToggle) {
-      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse, { toggle:false });
-      bsCollapse.hide();
-    }
-  });
+  
 </script>
 
 <script>
@@ -318,6 +307,46 @@
 </script>
 
 
+<script>
+(function () {
+  const navCollapse = document.querySelector('.navbar-collapse');
+  const toggleButton = document.querySelector('.navbar-toggler');
+  if (!navCollapse || !toggleButton) return;
+
+  let outsideHandler = null;
+
+  // Attach outside-click listeners only after the nav is fully shown
+  function onShown() {
+    // delay one tick so we don't catch the original toggle tap/click
+    setTimeout(() => {
+      outsideHandler = (e) => {
+        const clickedInsideNav = navCollapse.contains(e.target);
+        const clickedToggle = toggleButton.contains(e.target);
+        if (!clickedInsideNav && !clickedToggle) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse)
+            || new bootstrap.Collapse(navCollapse, { toggle: false });
+          bsCollapse.hide();
+        }
+      };
+      // Support both mouse and touch
+      document.addEventListener('click', outsideHandler, { passive: true });
+      document.addEventListener('touchstart', outsideHandler, { passive: true });
+    }, 0);
+  }
+
+  // Clean up when hidden
+  function onHidden() {
+    if (outsideHandler) {
+      document.removeEventListener('click', outsideHandler);
+      document.removeEventListener('touchstart', outsideHandler);
+      outsideHandler = null;
+    }
+  }
+
+  navCollapse.addEventListener('shown.bs.collapse', onShown);
+  navCollapse.addEventListener('hidden.bs.collapse', onHidden);
+})();
+</script>
 
 
 
