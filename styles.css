@@ -259,8 +259,9 @@ a:focus-visible, button:focus-visible {
     flex-direction: row;
     justify-content: space-between;
     background: linear-gradient(90deg, #6066bd85, #00a00891);
-   width: 100%;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 2px 2px 10px green;
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
+    z-index: 5000;
   }
 }
 
@@ -283,3 +284,20 @@ a:focus-visible, button:focus-visible {
 .navbar-toggler-icon {
   filter: invert(1) contrast(2); /* make the default icon white */
 }
+
+/* Cap the brand image on phones */
+@media (max-width: 575.98px) {
+  #title { max-width: 45vw; height: auto; }
+}
+
+/* Prevent collapsed area from creating a wider line */
+.navbar-collapse { max-width: 100%; overflow-x: hidden; }
+
+/* Allow wrapping when collapsed */
+.navbar-nav { flex-wrap: wrap; }
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link { white-space: normal; }
+}
+
+/* Safety net to kill any remaining 1–2px nudges */
+html, body { overflow-x: hidden; }
