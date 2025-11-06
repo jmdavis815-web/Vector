@@ -75,7 +75,6 @@ a:focus-visible, button:focus-visible {
 
 .power-link:hover {
   color: #00e5ff; /* bright blue glow */
-  border-bottom: 2px solid #00e5ff;
   text-shadow: 0 0 10px #00e5ff, 0 0 20px #00c853;
   transform: scale(1.05);
 }
@@ -95,7 +94,6 @@ a:focus-visible, button:focus-visible {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   transition: top 0.4s ease; /* smooth show/hide */
-  overflow: hidden;
 }
 
 #nav-links {
@@ -120,6 +118,7 @@ a:focus-visible, button:focus-visible {
 #list-item {
   color: white;
   font-weight: 700;
+  z-index: 4100;
 }
 
 #list-item:hover {
