@@ -99,6 +99,7 @@ a:focus-visible, button:focus-visible {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   transition: top 0.4s ease; /* smooth show/hide */
+  overflow: visible;
 }
 
 #nav-links {
@@ -109,7 +110,7 @@ a:focus-visible, button:focus-visible {
 }
 
 #drop-menu {
-  z-index: 4100;
+  z-index: 6000;
   background: linear-gradient(90deg, #80e766, #00a008);
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -118,7 +119,7 @@ a:focus-visible, button:focus-visible {
 #list-item {
   color: white;
   font-weight: 700;
-  z-index: 4100;
+  z-index: 4200;
 }
 
 #nav-button {
@@ -304,3 +305,35 @@ a:focus-visible, button:focus-visible {
 
 /* Safety net to kill any remaining 1–2px nudges */
 html, body { overflow-x: hidden; }
+
+@media (min-width: 992px) {
+  .nav-item.dropdown { position: relative; } /* or use the HTML utility class above */
+
+  .nav-item.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;          /* directly under the toggle */
+    left: 0;            /* align left edges (use right:0 or .dropdown-menu-end to right-align) */
+    margin-top: .5rem;  /* small gap */
+    z-index: 6000;
+  }
+}
+
+/* navbar and wrappers must NOT clip the menu */
+#siteNav,
+#siteNav .container-fluid,
+.navbar-collapse {
+  overflow: visible;
+}
+
+/* desktop (≥992px): anchor under the 'Services' li and overlay page */
+@media (min-width: 992px) {
+  .nav-item.dropdown { position: relative; }        /* anchor */
+  .nav-item.dropdown .dropdown-menu {
+    position: absolute;                              /* don't resize navbar */
+    top: 100%;                                       /* right under the toggle */
+    left: 0;                                         /* align left edges (or use right:0) */
+    margin-top: .5rem;                               /* small gap */
+    z-index: 6000;
+    transform: none !important;                      /* cancel Popper transforms */
+  }
+}
