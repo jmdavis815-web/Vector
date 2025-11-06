@@ -97,7 +97,7 @@ a:focus-visible, button:focus-visible {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 2px 2px 10px green;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   transition: top 0.4s ease; /* smooth show/hide */
 }
 
