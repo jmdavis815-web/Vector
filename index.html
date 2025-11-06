@@ -72,7 +72,7 @@
                 </a></li>
                 <li>
                   <a id="list-item" class="dropdown-item" href="#">
-                    Transpertation
+                    Transportation
                   </a>
                 </li>
                 <li>
@@ -156,6 +156,9 @@
     <br>
     <br>
 
+    
+
+
     <!----- Discover More ----->
     <div id="discover" class="container text-start">
       <div class="row">
@@ -179,6 +182,19 @@
             trust Vector Electrical Group to deliver exceptional results.
           </p>
         </div>
+        <div class="col-8 col-md-4 col-lg-4">
+          <img src="logo-tab-2.webp" width="100%">
+        </div>
+        <div class="col-12 col-md-8 col-lg-8">
+          <p class="site-text text-center">
+  Ready to power your next project? 
+  <a class="power-link" href="contact.html" title="Contact Vector Electrical Group">
+    Contact our team today
+  </a>
+  for a free consultation.
+</p>
+
+        </div>
       </div>
     </div>
     <br>
@@ -186,15 +202,18 @@
     <br>
 
     <!----- Instagram ----->
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <a href="https://www.instagram.com/reel/DPC2ayPge91/" target="_blank">
-            <img src="https://www.instagram.com/reel/DPC2ayPge91/" alt="Instagram Image Description" width="150">
-          </a>
-        </div>
-      </div>
+    <!-- Replace your current Instagram block with this -->
+<div class="container my-4">
+  <div class="row">
+    <div class="col">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPC2ayPge91/" data-instgrm-version="14" style="background:#fff; border:0; margin: 0 auto; max-width:540px; width:100%;">
+        <a href="https://www.instagram.com/reel/DPC2ayPge91/" target="_blank" rel="noopener" width="200px">View this post on Instagram</a>
+      </blockquote>
     </div>
+  </div>
+</div>
+<script async defer src="https://www.instagram.com/embed.js"></script>
+
 
     <!------------- Footer ------------>
     <div id="footer" class="card footer">
@@ -240,9 +259,10 @@
           <br>
           <br>
         </div>
-        <div class="col">
+        <br>
+        <div class="col-12">
         <em><p id="copyright">
-          © 2023 Vector Electrical Group LLC. All Rights Reserved.
+          © 2025 Vector Electrical Group LLC. All Rights Reserved.
         </p></em>
         </div>
       </div>
@@ -250,39 +270,53 @@
 
     <!------------- Sticky Nav Bar Script ------------>
     <script>
+  // Sticky on scroll up
   let lastScrollY = window.scrollY;
   const siteNav = document.getElementById('siteNav');
-
   window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY) {
-      // scrolling down → hide navbar
-      siteNav.style.top = '-100px';
-    } else {
-      // scrolling up → show navbar
-      siteNav.style.top = '0';
-    }
+    siteNav.style.top = (window.scrollY > lastScrollY) ? '-100px' : '0';
     lastScrollY = window.scrollY;
+  });
+
+  // Close navbar/collapse on outside click
+  document.addEventListener('click', (event) => {
+    const navCollapse = document.querySelector('.navbar-collapse');
+    const toggleButton = document.querySelector('.navbar-toggler');
+    const isOpen = navCollapse?.classList.contains('show');
+    const clickedInsideNav = event.target.closest('.navbar-collapse');
+    const clickedToggle = event.target.closest('.navbar-toggler');
+    if (isOpen && !clickedInsideNav && !clickedToggle) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse, { toggle:false });
+      bsCollapse.hide();
+    }
   });
 </script>
 
-      <!------------- Drop Menu Click Script ------------>
-      <script>
-document.addEventListener('click', function (event) {
-  const navCollapse = document.querySelector('.navbar-collapse');
-  const toggleButton = document.querySelector('.navbar-toggler');
+<script>
+// Fix hover sticking on touch devices
+(function() {
+  let isTouch = false;
 
-  // Check if navbar is open
-  const isOpen = navCollapse.classList.contains('show');
-  const clickedInsideNav = event.target.closest('.navbar-collapse');
-  const clickedToggle = event.target.closest('.navbar-toggler');
+  function handleTouchStart() {
+    if (!isTouch) {
+      isTouch = true;
 
-  // If nav is open and the click is outside both nav & toggle → close it
-  if (isOpen && !clickedInsideNav && !clickedToggle) {
-    const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
-    bsCollapse.hide();
+      // Disable hover styles by adding a helper class to <body>
+      document.body.classList.add('no-hover');
+
+      // Re-enable hover after a short delay (like mouse leaving)
+      setTimeout(() => {
+        document.body.classList.remove('no-hover');
+        isTouch = false;
+      }, 1000); // 1 second delay (adjust as you like)
+    }
   }
-});
+
+  // Listen for any touch interaction
+  window.addEventListener('touchstart', handleTouchStart, false);
+})();
 </script>
+
 
 
 
