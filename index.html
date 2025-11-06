@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+    <!-- ===== Meta ===== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--- Tab Title --->
+
+    <!-- ===== Title & Favicon ===== -->
     <title>Vector Electrical Group</title>
     <link id="tab-logo" rel="icon" type="image/png" href="logo-tab.webp" />
-    <!--- Style Sheet --->
+
+    <!-- ===== Styles ===== -->
     <link rel="stylesheet" href="styles.css" />
-    <!--- BootStrap --->
+
+    <!-- ===== Bootstrap (CSS + Bundle JS) ===== -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,56 +25,85 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-
   </head>
 
   <body>
-
-    <!------------ Nav Bar ------------>
-        <nav id="siteNav" class="navbar navbar-expand-lg navbar-industrial">
-          <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-          <img id="title" src="vec-crop.webp" alt="Vector Title" width="175px" title="Home" />
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+    <nav id="siteNav" class="navbar navbar-expand-lg navbar-industrial">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="title"
+            src="vec-crop.webp"
+            alt="Vector Title"
+            width="175px"
+            title="Home"
+          />
         </a>
-        <button id="nav-button"
+
+        <!-- Toggler -->
+        <button
+          id="nav-button"
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarText"
           aria-controls="navbarText"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="navbarText">
+          <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item">
-              <a id="nav-links" class="nav-link active" aria-current="page" href="index.html">
+              <a
+                id="nav-links"
+                class="nav-link active"
+                aria-current="page"
+                href="index.html"
+              >
                 Home
               </a>
             </li>
+
             <li class="nav-item">
               <a id="nav-links" class="nav-link" href="#" title="Our Team">
                 About
               </a>
             </li>
+
+            <!-- Dropdown -->
             <li class="nav-item dropdown">
-  <a id="nav-links"
-     class="nav-link dropdown-toggle"
-     href="#"
-     role="button"
-     data-bs-toggle="dropdown"
-     data-bs-display="static"
-     aria-expanded="false">
-    Services
-  </a>
+              <a
+                id="nav-links"
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+
               <ul id="drop-menu" class="dropdown-menu">
-                <li><a id="list-item" class="dropdown-item" href="#">
-                  Electrical Construction
-                </a></li>
-                <li><a id="list-item" class="dropdown-item" href="#">
-                  Underground
-                </a></li>
+                <li>
+                  <a id="list-item" class="dropdown-item" href="#">
+                    Electrical Construction
+                  </a>
+                </li>
+                <li>
+                  <a id="list-item" class="dropdown-item" href="#">
+                    Underground
+                  </a>
+                </li>
                 <li>
                   <a id="list-item" class="dropdown-item" href="#">
                     Transportation
@@ -89,330 +121,367 @@
                 </li>
               </ul>
             </li>
+
             <li class="nav-item">
               <a id="nav-links" class="nav-link" href="#">
                 Contact
               </a>
             </li>
           </ul>
-          <span 
-            id="social" 
-            class="text-center navbar-text">
+
+          <!-- Right social icons -->
+          <span id="social" class="text-center navbar-text">
             <a href="#">
-              <img 
-              id="soc-img" 
-              src="logo-tab-2.webp" 
-              width="35px" 
-              alt="facebook link" 
-              title="Facebook">
+              <img
+                id="soc-img"
+                src="logo-tab-2.webp"
+                width="35px"
+                alt="facebook link"
+                title="Facebook"
+              />
             </a>
             <a href="#">
-              <img 
-              id="soc-img" 
-              src="logo-tab-2.webp" 
-              width="35px" 
-              alt="instagram link" 
-              title="Instagram">
+              <img
+                id="soc-img"
+                src="logo-tab-2.webp"
+                width="35px"
+                alt="instagram link"
+                title="Instagram"
+              />
             </a>
             <a href="#">
-              <img 
-              id="soc-img" 
-              src="logo-tab-2.webp" 
-              width="35px" 
-              alt="linkedin link" 
-              title="Linkedin">
+              <img
+                id="soc-img"
+                src="logo-tab-2.webp"
+                width="35px"
+                alt="linkedin link"
+                title="Linkedin"
+              />
             </a>
           </span>
         </div>
-        </div>
-         
-       
-        
+      </div>
     </nav>
-     
 
-    
-
-    <!-- Video Background -->
+    <!-- =========================================================
+         HERO / VIDEO SECTION
+    ========================================================== -->
     <div class="video-container">
       <div class="container">
         <div class="row">
+          <!-- Background video -->
           <div class="col-12">
             <video autoplay muted loop playsinline id="bg-video">
-            <source src="con-examp-2.mp4" type="video/mp4" />
+              <source src="con-examp-2.mp4" type="video/mp4" />
               Your browser does not support HTML5 video.
             </video>
           </div>
-          <div class="overlay-text text-start col-12 col-md-7 col-lg-5 ">
-            <h4>
-              Experience top-notch electrical services
-            </h4>
+
+          <!-- Overlay text -->
+          <div class="overlay-text text-start col-12 col-md-7 col-lg-5">
+            <h4>Experience top-notch electrical services</h4>
             <p>
-              From small engine repairs to large industrial projects,
-              trust our skilled professionals to get the job done right.
+              From small engine repairs to large industrial projects, trust our
+              skilled professionals to get the job done right.
             </p>
           </div>
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
 
-    
+    <br /><br /><br />
 
-
-    <!----- Discover More ----->
+    <!-- =========================================================
+         DISCOVER SECTION
+    ========================================================== -->
     <div id="discover" class="container text-start">
       <div class="row">
         <div class="col-12 col-md-10 col-lg-8">
-          <h3>
-            Discover our expertise in electrical infrastructure projects
-          </h3>
-          <br>
-          <a id="learn-more" href="#" title="Services">
-            Learn More
-          </a>
-          <br>
-          <br>
+          <h3>Discover our expertise in electrical infrastructure projects</h3>
+          <br />
+          <a id="learn-more" href="#" title="Services"> Learn More </a>
+          <br /><br />
         </div>
+
         <div class="col-12 col-md-10 col-lg-8">
           <p>
-            Learn more about our electrical contracting services and how we can bring your projects to life. 
-            With our extensive experience and dedication to quality, 
-            we can handle any aspect of your electrical infrastructure needs. 
-            From design and installation to maintenance and repairs, 
-            trust Vector Electrical Group to deliver exceptional results.
+            Learn more about our electrical contracting services and how we can
+            bring your projects to life. With our extensive experience and
+            dedication to quality, we can handle any aspect of your electrical
+            infrastructure needs. From design and installation to maintenance
+            and repairs, trust Vector Electrical Group to deliver exceptional
+            results.
           </p>
         </div>
+
         <div class="col-12 col-md-4 col-lg-4 text-center">
-          <img src="logo-tab-2.webp" width="100%">
+          <img src="logo-tab-2.webp" width="100%" alt="Vector logo" />
         </div>
+
         <div class="col-12 col-md-8 col-lg-8">
           <p class="site-text text-center">
-  Ready to power your next project? 
-  <a class="power-link" href="contact.html" title="Contact Vector Electrical Group">
-    Contact our team today
-  </a>
-  for a free consultation.
-</p>
-
+            Ready to power your next project?
+            <a
+              class="power-link"
+              href="contact.html"
+              title="Contact Vector Electrical Group"
+            >
+              Contact our team today
+            </a>
+            for a free consultation.
+          </p>
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
 
-    <!----- Instagram ----->
-    <!-- Replace your current Instagram block with this -->
-<div class="container my-4">
-  <div class="row">
-    <div class="col">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPC2ayPge91/" data-instgrm-version="14" style="background:#fff; border:0; margin: 0 auto; max-width:540px; width:100%;">
-        <a href="https://www.instagram.com/reel/DPC2ayPge91/" target="_blank" rel="noopener" width="200px">View this post on Instagram</a>
-      </blockquote>
+    <br /><br /><br />
+
+    <!-- =========================================================
+         INSTAGRAM EMBED
+    ========================================================== -->
+    <div class="container my-4">
+      <div class="row">
+        <div class="col">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DPC2ayPge91/"
+            data-instgrm-version="14"
+            style="background:#fff; border:0; margin: 0 auto; max-width:540px; width:100%;"
+          >
+            <a
+              href="https://www.instagram.com/reel/DPC2ayPge91/"
+              target="_blank"
+              rel="noopener"
+              width="200px"
+            >
+              View this post on Instagram
+            </a>
+          </blockquote>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<script async defer src="https://www.instagram.com/embed.js"></script>
+    <script async defer src="https://www.instagram.com/embed.js"></script>
 
-
-    <!------------- Footer ------------>
+    <!-- =========================================================
+         FOOTER CONTENT
+    ========================================================== -->
     <div id="footer" class="card footer">
       <div class="container-fluid">
-      <div class="row text-center card-body">
-        <div class="card-header col-12 col-md-6 col-lg-4">
-          <h5>
-            Hours
-          </h5>
-          <p>
-            Monday &ndash; Friday<br>
-            7:30am &ndash; 4pm
-          </p>
-        </div>
-        <div class="card-header col-12 col-md-6 col-lg-4">
-          <h5>
-            Location
-          </h5>
-          <p>
-            3702 West Valley Highway North<br>
-            Suite 500<br>
-            Auburn, WA 98001
-          </p>
-        </div>
-        <div class="card-header col-12 col-md-12 col-lg-4">
-          <h5>
-            Contact
-          </h5>
-          <p>
-            (206) 556 &ndash; 5995<br>
-            admin@vectorelectricalgroup.com
-          </p>
-        </div>
-        <div id="logos" class="row card-body">
-          <div class="col-12 col-md-6 col-lg-4 ">
-            <img src="omwbe-logo.webp" alt="omwbe Logo"  width="125px" />
+        <div class="row text-center card-body">
+          <!-- Hours -->
+          <div class="card-header col-12 col-md-6 col-lg-4">
+            <h5>Hours</h5>
+            <p>
+              Monday &ndash; Friday<br />
+              7:30am &ndash; 4pm
+            </p>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 ">
-            <img src="ibewlogo-1.webp" alt="ibew Logo" width="125px" />
+
+          <!-- Location -->
+          <div class="card-header col-12 col-md-6 col-lg-4">
+            <h5>Location</h5>
+            <p>
+              3702 West Valley Highway North<br />
+              Suite 500<br />
+              Auburn, WA 98001
+            </p>
           </div>
-          <div class="col-12 col-md-12 col-lg-4 ">
-            <img src="neca-logo2.webp" alt="neca Logo"  width="125px" />
+
+          <!-- Contact -->
+          <div class="card-header col-12 col-md-12 col-lg-4">
+            <h5>Contact</h5>
+            <p>
+              (206) 556 &ndash; 5995<br />
+              admin@vectorelectricalgroup.com
+            </p>
           </div>
-          <br>
-          <br>
-        </div>
-        <br>
-        <div class="col-12">
-        <em><p id="copyright">
-          © 2025 Vector Electrical Group LLC. All Rights Reserved.
-        </p></em>
+
+          <!-- Logos -->
+          <div id="logos" class="row card-body">
+            <div class="col-12 col-md-6 col-lg-4">
+              <img src="omwbe-logo.webp" alt="omwbe Logo" width="125px" />
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <img src="ibewlogo-1.webp" alt="ibew Logo" width="125px" />
+            </div>
+            <div class="col-12 col-md-12 col-lg-4">
+              <img src="neca-logo2.webp" alt="neca Logo" width="125px" />
+            </div>
+            <br /><br />
+          </div>
+
+          <!-- Copyright -->
+          <br />
+          <div class="col-12">
+            <em>
+              <p id="copyright">
+                © 2025 Vector Electrical Group LLC. All Rights Reserved.
+              </p>
+            </em>
+          </div>
         </div>
       </div>
     </div>
-    </div>
 
-    <!------------- Footer Nav ------------>
+    <!-- =========================================================
+         FOOTER NAV (ICONS)
+         (Visibility controlled via CSS + mobile OS detection)
+    ========================================================== -->
     <ul id="footer-nav" class="nav nav-tabs">
-  <li class="nav-item">
-    <a id="active-tab" class="nav-link active" aria-current="page" href="index.html"><img src="home-black.png" width="25px" height="25px"></a>
-  </li>
-  <li class="nav-item">
-    <a id="inactive-tab" class="nav-link" href="#"><img src="hardhat.png" width="25px" height="25px"></a>
-  </li>
-  <li class="nav-item">
-    <a id="inactive-tab" class="nav-link" href="#"><img src="about-us.png" width="35px" height="25px"></a>
-  </li>
-  <li class="nav-item">
-    <a id="inactive-tab" class="nav-link" href="#"><img src="contact-img.png" width="35px" height="25px"></a>
-  </li>
-</ul>
+      <li class="nav-item">
+        <a
+          id="active-tab"
+          class="nav-link active"
+          aria-current="page"
+          href="index.html"
+        >
+          <img src="home-black.png" width="25" height="25" alt="Home" />
+        </a>
+      </li>
+      <li class="nav-item">
+        <a id="inactive-tab" class="nav-link" href="#">
+          <img src="hardhat.png" width="25" height="25" alt="About" />
+        </a>
+      </li>
+      <li class="nav-item">
+        <a id="inactive-tab" class="nav-link" href="#">
+          <img src="about-us.png" width="35" height="25" alt="Team" />
+        </a>
+      </li>
+      <li class="nav-item">
+        <a id="inactive-tab" class="nav-link" href="#">
+          <img src="contact-img.png" width="35" height="25" alt="Contact" />
+        </a>
+      </li>
+    </ul>
 
-    <!------------- Sticky Nav Bar Script ------------>
+    <!-- =========================================================
+         SCRIPTS
+    ========================================================== -->
+
+    <!-- Sticky on scroll up -->
     <script>
-  // Sticky on scroll up
-  let lastScrollY = window.scrollY;
-  const siteNav = document.getElementById('siteNav');
-  window.addEventListener('scroll', () => {
-    siteNav.style.top = (window.scrollY > lastScrollY) ? '-100px' : '0';
-    lastScrollY = window.scrollY;
-  });
+      let lastScrollY = window.scrollY;
+      const siteNav = document.getElementById('siteNav');
 
-  
-</script>
+      window.addEventListener('scroll', () => {
+        siteNav.style.top = window.scrollY > lastScrollY ? '-100px' : '0';
+        lastScrollY = window.scrollY;
+      });
+    </script>
 
-<script>
-// Fix hover sticking on touch devices
-(function() {
-  let isTouch = false;
+    <!-- Fix hover “sticking” on touch devices -->
+    <script>
+      (function () {
+        let isTouch = false;
 
-  function handleTouchStart() {
-    if (!isTouch) {
-      isTouch = true;
+        function handleTouchStart() {
+          if (!isTouch) {
+            isTouch = true;
+            document.body.classList.add('no-hover');
 
-      // Disable hover styles by adding a helper class to <body>
-      document.body.classList.add('no-hover');
-
-      // Re-enable hover after a short delay (like mouse leaving)
-      setTimeout(() => {
-        document.body.classList.remove('no-hover');
-        isTouch = false;
-      }, 1000); // 1 second delay (adjust as you like)
-    }
-  }
-
-  // Listen for any touch interaction
-  window.addEventListener('touchstart', handleTouchStart, false);
-})();
-</script>
-
-
-<script>
-(function () {
-  const navCollapse = document.querySelector('.navbar-collapse');
-  const toggleButton = document.querySelector('.navbar-toggler');
-  if (!navCollapse || !toggleButton) return;
-
-  let outsideHandler = null;
-
-  // Attach outside-click listeners only after the nav is fully shown
-  function onShown() {
-    // delay one tick so we don't catch the original toggle tap/click
-    setTimeout(() => {
-      outsideHandler = (e) => {
-        const clickedInsideNav = navCollapse.contains(e.target);
-        const clickedToggle = toggleButton.contains(e.target);
-        if (!clickedInsideNav && !clickedToggle) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse)
-            || new bootstrap.Collapse(navCollapse, { toggle: false });
-          bsCollapse.hide();
+            setTimeout(() => {
+              document.body.classList.remove('no-hover');
+              isTouch = false;
+            }, 1000);
+          }
         }
-      };
-      // Support both mouse and touch
-      document.addEventListener('click', outsideHandler, { passive: true });
-      document.addEventListener('touchstart', outsideHandler, { passive: true });
-    }, 0);
-  }
 
-  // Clean up when hidden
-  function onHidden() {
-    if (outsideHandler) {
-      document.removeEventListener('click', outsideHandler);
-      document.removeEventListener('touchstart', outsideHandler);
-      outsideHandler = null;
-    }
-  }
+        window.addEventListener('touchstart', handleTouchStart, false);
+      })();
+    </script>
 
-  navCollapse.addEventListener('shown.bs.collapse', onShown);
-  navCollapse.addEventListener('hidden.bs.collapse', onHidden);
-})();
-</script>
+    <!-- Close navbar when tapping/clicking outside -->
+    <script>
+      (function () {
+        const navCollapse = document.querySelector('.navbar-collapse');
+        const toggleButton = document.querySelector('.navbar-toggler');
+        if (!navCollapse || !toggleButton) return;
 
-<script>
-document.addEventListener('touchend', (e) => {
-  const tappable = e.target.closest('a, button, .nav-link, .dropdown-item, .power-link');
-  if (tappable) {
-    // Let the click fire, then clear focus so styles don't “stick”
-    setTimeout(() => {
-      if (document.activeElement && document.activeElement !== document.body) {
-        document.activeElement.blur();
-      }
-    }, 0);
-  }
-}, { passive: true });
-</script>
+        let outsideHandler = null;
 
-<script>
-(function () {
-  const ua = navigator.userAgent || "";
-  const isAndroid = /Android/i.test(ua);
-  const isIOS = /iPhone|iPad|iPod/i.test(ua)
-    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS pretends to be Mac
+        function onShown() {
+          setTimeout(() => {
+            outsideHandler = (e) => {
+              const clickedInsideNav = navCollapse.contains(e.target);
+              const clickedToggle = toggleButton.contains(e.target);
 
-  if (isAndroid || isIOS) {
-    document.documentElement.classList.add('mobile-os');
-  } else {
-    document.documentElement.classList.add('desktop-os');
-  }
-})();
-</script>
+              if (!clickedInsideNav && !clickedToggle) {
+                const bsCollapse =
+                  bootstrap.Collapse.getInstance(navCollapse) ||
+                  new bootstrap.Collapse(navCollapse, { toggle: false });
+                bsCollapse.hide();
+              }
+            };
 
-<script>
-(function () {
-  const ua = navigator.userAgent || "";
-  const isAndroid = /Android/i.test(ua);
-  const isIOS = /iPhone|iPad|iPod/i.test(ua)
-    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
+            document.addEventListener('click', outsideHandler, { passive: true });
+            document.addEventListener('touchstart', outsideHandler, { passive: true });
+          }, 0);
+        }
 
-  document.documentElement.classList.add(isAndroid || isIOS ? 'mobile-os' : 'desktop-os');
-})();
-</script>
+        function onHidden() {
+          if (outsideHandler) {
+            document.removeEventListener('click', outsideHandler);
+            document.removeEventListener('touchstart', outsideHandler);
+            outsideHandler = null;
+          }
+        }
 
+        navCollapse.addEventListener('shown.bs.collapse', onShown);
+        navCollapse.addEventListener('hidden.bs.collapse', onHidden);
+      })();
+    </script>
 
+    <!-- Blur active element after taps to prevent “stuck focus” -->
+    <script>
+      document.addEventListener(
+        'touchend',
+        (e) => {
+          const tappable = e.target.closest(
+            'a, button, .nav-link, .dropdown-item, .power-link'
+          );
+          if (tappable) {
+            setTimeout(() => {
+              if (document.activeElement && document.activeElement !== document.body) {
+                document.activeElement.blur();
+              }
+            }, 0);
+          }
+        },
+        { passive: true }
+      );
+    </script>
 
+    <!-- Mobile OS detection (IIFE #1) -->
+    <script>
+      (function () {
+        const ua = navigator.userAgent || '';
+        const isAndroid = /Android/i.test(ua);
+        const isIOS =
+          /iPhone|iPad|iPod/i.test(ua) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
+        if (isAndroid || isIOS) {
+          document.documentElement.classList.add('mobile-os');
+        } else {
+          document.documentElement.classList.add('desktop-os');
+        }
+      })();
+    </script>
+
+    <!-- Mobile OS detection (IIFE #2) -->
+    <script>
+      (function () {
+        const ua = navigator.userAgent || '';
+        const isAndroid = /Android/i.test(ua);
+        const isIOS =
+          /iPhone|iPad|iPod/i.test(ua) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        document.documentElement.classList.add(
+          isAndroid || isIOS ? 'mobile-os' : 'desktop-os'
+        );
+      })();
+    </script>
   </body>
 </html>
-
-

@@ -1,15 +1,19 @@
-p {
-  font-size: 20px;
-}
+/* =========================================================
+   BASE / RESET
+========================================================= */
+p { font-size: 20px; }
 
 body {
-  background: linear-gradient(90deg, white, #3a3a3a91);;
+  background: linear-gradient(90deg, white, #3a3a3a91);
 }
 
-img {
-  max-width: 300px;
-}
+img { max-width: 300px; }
 
+html, body { overflow-x: hidden; } /* safety net */
+
+/* =========================================================
+   ACCESSIBILITY / INTERACTION
+========================================================= */
 a, button { -webkit-tap-highlight-color: transparent; }
 
 /* Don’t show focus ring for mouse/touch; keep it for keyboard users */
@@ -17,11 +21,20 @@ a:focus, button:focus { outline: none; }
 
 /* Accessible focus only when navigating by keyboard */
 a:focus-visible, button:focus-visible {
-  outline: 2px solid #00e5ff;      /* adjust color to your palette */
+  outline: 2px solid #00e5ff;
   outline-offset: 3px;
 }
 
+/* Active press effect */
+.power-link:active,
+#nav-links:active,
+#list-item:active {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+  transition: transform 80ms ease, filter 80ms ease;
+}
 
+/* Hover effects only for devices that truly hover */
 @media (hover: hover) and (pointer: fine) {
   /* put ALL hover styles inside this block */
   #nav-links:hover {
@@ -36,37 +49,29 @@ a:focus-visible, button:focus-visible {
     transition: 0.3s;
   }
   .power-link:hover {
-    color: white; 
-  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
-  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
-  text-decoration: none;
+    color: white;
+    -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
+    text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
+    text-decoration: none;
   }
-  /* add any other :hover rules here */
   #inactive-tab:hover {
     text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
     -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
   }
   #learn-more:hover {
-  background:  linear-gradient(90deg, #a7e298, #38ac3e);
-  border-color: rgb(6, 153, 0, 0.5);
-  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
-  font-weight: 700;
-  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
-  transition: 0.3s;
-  box-shadow: 4px 4px 10px black, 4px 4px 10px green;
+    background: linear-gradient(90deg, #a7e298, #38ac3e);
+    border-color: rgb(6, 153, 0, 0.5);
+    -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
+    font-weight: 700;
+    text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
+    transition: 0.3s;
+    box-shadow: 4px 4px 10px black, 4px 4px 10px green;
   }
 }
 
-.power-link:active,
-#nav-links:active,
-#list-item:active {
-  transform: scale(0.98);
-  filter: brightness(0.95);
-  transition: transform 80ms ease, filter 80ms ease;
-}
-
-
-/*==== General Site Text ====*/
+/* =========================================================
+   TYPOGRAPHY / LINKS
+========================================================= */
 .site-text {
   font-family: "Segoe UI", "Roboto", sans-serif;
   font-size: 1.2rem;
@@ -76,7 +81,6 @@ a:focus-visible, button:focus-visible {
   margin: 20px 0;
 }
 
-/*==== Power Link Styling ====*/
 .power-link {
   color: #00c853; /* electric green */
   font-weight: 700;
@@ -85,20 +89,21 @@ a:focus-visible, button:focus-visible {
   transition: all 0.3s ease;
 }
 
-/*==== Nav ==== */
+/* =========================================================
+   NAVBAR
+========================================================= */
 #siteNav {
   background: linear-gradient(90deg, #6066bd85, #00a00891);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   z-index: 4000;
-    /* glass blur magic ✨ */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-  transition: top 0.4s ease; /* smooth show/hide */
+  transition: top 0.4s ease;
   overflow: visible;
 }
 
@@ -122,9 +127,7 @@ a:focus-visible, button:focus-visible {
   z-index: 4200;
 }
 
-#nav-button {
-  margin-right: 10px;
-}
+#nav-button { margin-right: 10px; }
 
 #title {
   margin-left: 10px;
@@ -132,46 +135,94 @@ a:focus-visible, button:focus-visible {
   margin-top: -10px;
 }
 
+/* Ensure internal wrappers never clip the dropdown */
+#siteNav,
+#siteNav .container-fluid,
+.navbar-collapse {
+  overflow: visible;
+}
+
+/* Collapsed area: prevent horizontal scroll and allow wrapping */
+.navbar-collapse { max-width: 100%; overflow-x: hidden; }
+.navbar-nav { flex-wrap: wrap; }
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link { white-space: normal; }
+}
+
+/* Toggler visibility on gradient backgrounds */
+.navbar-toggler { border-color: rgba(255,255,255,0.6); }
+.navbar-toggler-icon { filter: invert(1) contrast(2); }
+
+/* Cap the brand image on phones */
+@media (max-width: 575.98px) {
+  #title { max-width: 45vw; height: auto; }
+}
+
+/* =========================================================
+   DROPDOWN ALIGNMENT / BEHAVIOR (DESKTOP ≥ 992px)
+========================================================= */
+@media (min-width: 992px) {
+  .nav-item.dropdown { position: relative; } /* anchor */
+  .nav-item.dropdown .dropdown-menu {
+    position: absolute;      /* don't resize navbar */
+    top: 100%;               /* right under the toggle */
+    left: 0;                 /* align left edges */
+    margin-top: .5rem;       /* small gap */
+    z-index: 6000;
+    transform: none !important; /* cancel Popper transforms */
+  }
+}
+
+/* Desktop dropdown scroll constraint */
+@media (min-width: 992px) {
+  .nav-item.dropdown .dropdown-menu {
+    max-height: calc(100vh - 80px); /* adjust for navbar height */
+    overflow-y: auto;
+  }
+}
+
+/* =========================================================
+   SOCIAL STRIP
+========================================================= */
 #social {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
+#social img { margin-right: 5px; }
 
-#social img {
-  margin-right: 5px;
-}
-
-/*==== Background video ==== */
+/* =========================================================
+   HERO / VIDEO
+========================================================= */
 #bg-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
   z-index: -2;
   overflow: hidden;
 }
 
 .video-container {
-    position: relative;
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-    box-shadow: 0px 0px 20px 2px #000000;
-    z-index: -2;
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px 2px #000000;
+  z-index: -2;
 }
 
 .overlay-text {
-    position: absolute;
-    z-index: 0;
-    color: white;
-    text-align: center;
-    text-shadow: 2px 2px 5px #000000;
-    top: 50%;
-    overflow: hidden;
-    font-weight: 700;
+  position: absolute;
+  z-index: 0;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px #000000;
+  top: 50%;
+  overflow: hidden;
+  font-weight: 700;
 }
 
 .overlay-text h4,
@@ -184,67 +235,52 @@ a:focus-visible, button:focus-visible {
     -2px -2px 4px #000;
 }
 
+#contact-text { margin-top: 200px; z-index: 4100; }
 
-#contact-text {
-  margin-top: 200px;
-  z-index: 4100;
-}
-
-/*==== Home Page Body ==== */
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
 #discover {
   position: relative;
   z-index: 0;
   overflow: hidden;
 }
 
-/*==== Learn More Button ==== */
 #learn-more {
   color: white;
   background: linear-gradient(90deg, #80e766, #00a008);
   border: 2px solid rgb(6, 153, 0);
   text-decoration: none;
-  padding: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 8px 10px;
   border-radius: 20px;
   box-shadow: 2px 2px 7px black, 2px 2px 7px green;
   font-weight: 700;
   transition: 0.3s;
 }
 
-
-
-/*==== Footer ==== */
+/* =========================================================
+   FOOTER CONTENT
+========================================================= */
 #footer {
-    bottom: 0;
-    width: 100%;
-    background-image: url(elec-con.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-
-    text-shadow: 2px 2px 4px #000000;
-    padding: 10px 0;
-    z-index: 0;
-    box-shadow: 0px 0px 20px 2px #000000;
-    border-color: rgba(9, 65, 32, 0.719);
-    overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  background-image: url(elec-con.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 10px 0;
+  z-index: 0;
+  box-shadow: 0px 0px 20px 2px #000000;
+  border-color: rgba(9, 65, 32, 0.719);
+  overflow: hidden;
 }
 
-#footer p {
-   color: white;
-   font-weight: 200;
-}
+#footer p { color: white; font-weight: 200; }
+#footer img { width: 125px; }
 
-#footer img {
-   width: 125px;
-}
-
-#logos {
-  display: flex;
-  justify-content: space-around;
-}
+#logos { display: flex; justify-content: space-around; }
 
 #copyright {
   font-size: 16px;
@@ -252,20 +288,23 @@ a:focus-visible, button:focus-visible {
   margin: 50px;
 }
 
+/* =========================================================
+   FOOTER NAV (MOBILE OS VISIBILITY + LAYOUT)
+   Note: Kept later !important rules to preserve behavior
+========================================================= */
+
 /* Hidden by default */
 #footer-nav { display: none; }
 
-/* Show only on Android/iOS */
-.mobile-os #footer-nav { 
-  display: flex; 
-}
+/* Show only on Android/iOS (class is set via JS UA sniffing) */
+.mobile-os #footer-nav { display: flex; }
 
 /* (optional) Only show on mobile OS *and* below a width */
 @media (max-width: 991.98px) {
   .mobile-os #footer-nav { display: flex; }
 }
 
-
+/* Layout on small/medium screens */
 @media (max-width: 991.98px) {
   #footer-nav {
     position: fixed;
@@ -280,8 +319,8 @@ a:focus-visible, button:focus-visible {
   }
 }
 
+/* Tab states */
 #active-tab {
-  
   background: linear-gradient(90deg, #c7f1bd, #5d8b5f);
   border-color: #00a008;
   color: white;
@@ -295,78 +334,17 @@ a:focus-visible, button:focus-visible {
   background: linear-gradient(90deg, #85d371d7, #16831fdc);
 }
 
-/* Ensure toggler icon is visible over your gradient */
-.navbar-toggler {
-  border-color: rgba(255,255,255,0.6);
-}
-.navbar-toggler-icon {
-  filter: invert(1) contrast(2); /* make the default icon white */
-}
+/* -------- DUPLICATED VISIBILITY BLOCKS (with !important) --------
+   These later rules intentionally override the earlier ones.
+------------------------------------------------------------------ */
 
-/* Cap the brand image on phones */
-@media (max-width: 575.98px) {
-  #title { max-width: 45vw; height: auto; }
-}
-
-/* Prevent collapsed area from creating a wider line */
-.navbar-collapse { max-width: 100%; overflow-x: hidden; }
-
-/* Allow wrapping when collapsed */
-.navbar-nav { flex-wrap: wrap; }
-@media (max-width: 991.98px) {
-  .navbar-nav .nav-link { white-space: normal; }
-}
-
-/* Safety net to kill any remaining 1–2px nudges */
-html, body { overflow-x: hidden; }
-
-@media (min-width: 992px) {
-  .nav-item.dropdown { position: relative; } /* or use the HTML utility class above */
-
-  .nav-item.dropdown .dropdown-menu {
-    position: absolute;
-    top: 100%;          /* directly under the toggle */
-    left: 0;            /* align left edges (use right:0 or .dropdown-menu-end to right-align) */
-    margin-top: .5rem;  /* small gap */
-    z-index: 6000;
-  }
-}
-
-/* navbar and wrappers must NOT clip the menu */
-#siteNav,
-#siteNav .container-fluid,
-.navbar-collapse {
-  overflow: visible;
-}
-
-/* desktop (≥992px): anchor under the 'Services' li and overlay page */
-@media (min-width: 992px) {
-  .nav-item.dropdown { position: relative; }        /* anchor */
-  .nav-item.dropdown .dropdown-menu {
-    position: absolute;                              /* don't resize navbar */
-    top: 100%;                                       /* right under the toggle */
-    left: 0;                                         /* align left edges (or use right:0) */
-    margin-top: .5rem;                               /* small gap */
-    z-index: 6000;
-    transform: none !important;                      /* cancel Popper transforms */
-  }
-}
-
-@media (min-width: 992px) {
-  .nav-item.dropdown .dropdown-menu {
-    max-height: calc(100vh - 80px);  /* 80px ≈ navbar height; adjust */
-    overflow-y: auto;
-  }
-}
-
-
-/* Hidden by default */
+/* Hidden by default (override) */
 #footer-nav { display: none !important; }
 
-/* Show ONLY on Android/iOS */
+/* Show ONLY on Android/iOS (override) */
 .mobile-os #footer-nav { display: flex !important; }
 
-/* Position/style it ONLY when on mobile OS AND small screens */
+/* Position/style it ONLY when on mobile OS AND small screens (override) */
 @media (max-width: 991.98px) {
   .mobile-os #footer-nav {
     position: fixed;
@@ -381,5 +359,5 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* Safety: never show on desktop OS, even if window is small */
+/* Safety: never show on desktop OS, even if window is small (override) */
 .desktop-os #footer-nav { display: none !important; }
