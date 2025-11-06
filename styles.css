@@ -95,6 +95,7 @@ a:focus-visible, button:focus-visible {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   transition: top 0.4s ease; /* smooth show/hide */
+  overflow: hidden;
 }
 
 #nav-links {
