@@ -395,6 +395,7 @@ a:focus-visible, button:focus-visible {
   border-color: #00a008;
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #inactive-tab {
