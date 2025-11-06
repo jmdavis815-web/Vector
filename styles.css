@@ -266,7 +266,8 @@ a:focus-visible, button:focus-visible {
 }
 
 #active-tab {
-  background: linear-gradient(90deg, #80e766, #00a008);
+  
+  background: linear-gradient(90deg, #c7f1bd, #5d8b5f);
   border-color: #00a008;
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -275,6 +276,7 @@ a:focus-visible, button:focus-visible {
 #inactive-tab {
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  background: linear-gradient(90deg, #a7e298, #38ac3e);
 }
 
 /* Ensure toggler icon is visible over your gradient */
