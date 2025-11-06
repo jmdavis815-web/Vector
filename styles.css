@@ -383,7 +383,7 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(90deg, #6066bd85, #00a00891);
+    background: linear-gradient(90deg, #85d371d7, #16831fdc);
     width: 100%;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
     z-index: 5000;
@@ -392,7 +392,6 @@ a:focus-visible, button:focus-visible {
 
 /* Tab states */
 #active-tab {
-  background: linear-gradient(90deg, #c7f1bd, #5d8b5f);
   border-color: #00a008;
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -402,7 +401,6 @@ a:focus-visible, button:focus-visible {
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
   border-color: #00a008;
-  background: linear-gradient(90deg, #85d371d7, #16831fdc);
 }
 
 /* -------- DUPLICATED VISIBILITY BLOCKS (with !important) --------
