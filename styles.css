@@ -288,6 +288,22 @@ a:focus-visible, button:focus-visible {
   margin: 50px;
 }
 
+.phone-link {
+  color: inherit;
+  text-decoration: none;
+  text-shadow: 0px 0px 10px#000, 0px 0px 7px black;
+}
+.phone-link:focus-visible { 
+  outline: 2px solid #00e5ff; outline-offset: 3px; 
+  text-shadow: 0px 0px 10px#000, 0px 0px 7px black;
+}
+
+#email {
+  text-shadow: 0px 0px 10px#000, 0px 0px 7px black, 0px 0px 7px darkgray;
+  color: lightblue;
+}
+
+
 /* =========================================================
    FOOTER NAV (MOBILE OS VISIBILITY + LAYOUT)
    Note: Kept later !important rules to preserve behavior
