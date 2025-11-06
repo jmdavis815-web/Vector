@@ -348,7 +348,19 @@
 })();
 </script>
 
-
+<script>
+document.addEventListener('touchend', (e) => {
+  const tappable = e.target.closest('a, button, .nav-link, .dropdown-item, .power-link');
+  if (tappable) {
+    // Let the click fire, then clear focus so styles don't “stick”
+    setTimeout(() => {
+      if (document.activeElement && document.activeElement !== document.body) {
+        document.activeElement.blur();
+      }
+    }, 0);
+  }
+}, { passive: true });
+</script>
 
 
   </body>
