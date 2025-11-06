@@ -277,7 +277,7 @@ a:focus-visible, button:focus-visible {
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
   border-color: #00a008;
-  background: linear-gradient(90deg, #a7e298d7, #2a352bdc);
+  background: linear-gradient(90deg, #85d371d7, #16831fdc);
 }
 
 /* Ensure toggler icon is visible over your gradient */
