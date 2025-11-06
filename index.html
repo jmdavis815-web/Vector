@@ -55,14 +55,13 @@
                 About
               </a>
             </li>
-            <li class="nav-item dropdown position-relative ">
+            <li class="nav-item dropdown position-static">
   <a id="nav-links"
      class="nav-link dropdown-toggle"
      href="#"
      role="button"
      data-bs-toggle="dropdown"
      data-bs-display="static"
-     data-bs-boundary="viewport" 
      aria-expanded="false">
     Services
   </a>
@@ -275,7 +274,7 @@
     </div>
 
     <!------------- Footer Nav ------------>
-    <ul id="footer-nav" class="nav nav-tabs d-flex d-lg-none">
+    <ul id="footer-nav" class="nav nav-tabs">
   <li class="nav-item">
     <a id="active-tab" class="nav-link active" aria-current="page" href="index.html"><img src="home-black.png" width="25px" height="25px"></a>
   </li>
@@ -383,6 +382,34 @@ document.addEventListener('touchend', (e) => {
   }
 }, { passive: true });
 </script>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS pretends to be Mac
+
+  if (isAndroid || isIOS) {
+    document.documentElement.classList.add('mobile-os');
+  } else {
+    document.documentElement.classList.add('desktop-os');
+  }
+})();
+</script>
+
+<script>
+(function () {
+  const ua = navigator.userAgent || "";
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
+
+  document.documentElement.classList.add(isAndroid || isIOS ? 'mobile-os' : 'desktop-os');
+})();
+</script>
+
+
 
 
   </body>
