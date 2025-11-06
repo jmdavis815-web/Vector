@@ -140,9 +140,6 @@ body {
     overflow: hidden;
     -webkit-text-stroke: 1px rgb(117, 117, 117);
     font-weight: 700;
-    font-family: "Segoe UI", "Roboto", sans-serif;
-    line-height: 1.6;
-    margin: 20px 0;
 }
 
 #contact-text {
