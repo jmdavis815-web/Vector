@@ -57,16 +57,26 @@ a:focus-visible, button:focus-visible {
     text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px white;
     transition: 0.3s;
   }
+  #active-list-item:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    font-weight: 700;
+    transition: 0.3s;
+    -webkit-text-stroke: white;
+  }
+
   .power-link:hover {
     color: white;
     -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
     text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
     text-decoration: none;
   }
+
   #inactive-tab:hover {
     text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px rgb(255, 255, 255);
     -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
   }
+
   #learn-more:hover {
     background: linear-gradient(90deg, #a7e298, #38ac3e);
     border-color: rgb(6, 153, 0, 0.5);
@@ -140,6 +150,16 @@ a:focus-visible, button:focus-visible {
 
 #list-item {
   color: white;
+  font-weight: 700;
+  z-index: 4200;
+}
+
+#active-list-item {
+  background: linear-gradient(90deg, #80e766, #00a008);
+    -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
+    text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px white;
+    transition: 0.3s;
+    color: white;
   font-weight: 700;
   z-index: 4200;
 }
