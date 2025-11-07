@@ -425,3 +425,32 @@ a:focus-visible, button:focus-visible {
 
 /* Safety: never show on desktop OS, even if window is small (override) */
 .desktop-os #footer-nav { display: none !important; }
+
+/* Smooth slide for the top navbar */
+.navbar-industrial {
+  position: sticky;          /* stays at top */
+  top: 0;
+  z-index: 1050;             /* above page content */
+  transition: transform 260ms ease, background-color 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
+}
+
+/* When scrolling down, slide the bar up (hidden) */
+.navbar-industrial.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Add a subtle background + shadow once the page is scrolled */
+.navbar-industrial.nav-scrolled {
+  background-color: rgba(0,0,0,0.65); /* adjust to your theme */
+  backdrop-filter: saturate(150%) blur(6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-industrial {
+    transition: none;
+  }
+}
+

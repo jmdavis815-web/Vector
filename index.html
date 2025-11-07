@@ -376,14 +376,48 @@
 
     <!-- Sticky on scroll up -->
     <script>
-      let lastScrollY = window.scrollY;
-      const siteNav = document.getElementById('siteNav');
+  (function () {
+    const nav = document.getElementById('siteNav');
+    if (!nav) return;
 
-      window.addEventListener('scroll', () => {
-        siteNav.style.top = window.scrollY > lastScrollY ? '-100px' : '0';
-        lastScrollY = window.scrollY;
-      });
-    </script>
+    let lastY = window.scrollY;
+    let ticking = false;
+    const hideThreshold = 10; // how much scroll movement before toggling
+    const scrollTrigger = 5;  // when to add shadow/background
+
+    function onScroll() {
+      const currentY = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Add subtle background once you’ve scrolled a bit
+          if (currentY > scrollTrigger) {
+            nav.classList.add('nav-scrolled');
+          } else {
+            nav.classList.remove('nav-scrolled');
+          }
+
+          // Hide when scrolling down, show when scrolling up
+          if (currentY > lastY + hideThreshold) {
+            nav.classList.add('nav-hidden');
+          } else if (currentY < lastY - hideThreshold) {
+            nav.classList.remove('nav-hidden');
+          }
+
+          lastY = currentY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    // Initialize state
+    nav.classList.remove('nav-hidden');
+    nav.classList.remove('nav-scrolled');
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+
 
     <!-- Fix hover “sticking” on touch devices -->
     <script>
