@@ -259,12 +259,7 @@ a:focus-visible, button:focus-visible {
 /* =========================================================
    SOCIAL STRIP
 ========================================================= */
-#social {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-#social img { margin-right: 5px; }
+
 
 /* =========================================================
    HERO / VIDEO
@@ -547,3 +542,5 @@ a:focus-visible, button:focus-visible {
   margin-top: 15px;
   margin-bottom: 30px;
 }
+
+
