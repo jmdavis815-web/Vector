@@ -411,5 +411,17 @@ a:focus-visible, button:focus-visible {
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
+/* Reserve aspect ratio so layout is stable before video loads */
+.video-container {
+  position: relative;
+}
+#bg-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* adjust if your source isn't 16:9 */
+  display: block;
+}
+
+
 /* Safety: never show on desktop OS, even if window is small (override) */
 .desktop-os #footer-nav { display: none !important; }
