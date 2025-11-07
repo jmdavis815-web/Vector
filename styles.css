@@ -57,6 +57,7 @@ a:focus-visible, button:focus-visible {
     text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px white;
     transition: 0.3s;
   }
+
   #active-list-item:hover {
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -156,10 +157,10 @@ a:focus-visible, button:focus-visible {
 
 #active-list-item {
   background: linear-gradient(90deg, #80e766, #00a008);
-    -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
-    text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px white;
-    transition: 0.3s;
-    color: white;
+  -webkit-text-stroke: 2px rgba(252, 252, 33, 0.349);
+  text-shadow: 4px 4px 20px rgb(255, 238, 0), 4px 4px 20px white;
+  transition: 0.3s;
+  color: white;
   font-weight: 700;
   z-index: 4200;
 }
@@ -183,7 +184,7 @@ a:focus-visible, button:focus-visible {
 
   /* Make dropdown menus flow as part of the collapse on mobile */
   .navbar .dropdown-menu {
-    position: static;          /* no absolute positioning inside collapse */
+    position: static;
     float: none;
     transform: none !important;
     max-height: none;
@@ -215,11 +216,10 @@ a:focus-visible, button:focus-visible {
   overflow: visible !important;
 }
 
-
-
 /* Collapsed area: prevent horizontal scroll and allow wrapping */
 .navbar-collapse { max-width: 100%; overflow-x: hidden; }
 .navbar-nav { flex-wrap: wrap; }
+
 @media (max-width: 991.98px) {
   .navbar-nav .nav-link { white-space: normal; }
 }
@@ -251,7 +251,7 @@ a:focus-visible, button:focus-visible {
 /* Desktop dropdown scroll constraint */
 @media (min-width: 992px) {
   .nav-item.dropdown .dropdown-menu {
-    max-height: calc(100vh - 80px); /* adjust for navbar height */
+    max-height: calc(100vh - 80px);
     overflow-y: auto;
   }
 }
@@ -363,8 +363,10 @@ a:focus-visible, button:focus-visible {
   text-decoration: none;
   text-shadow: 0px 0px 10px#000, 0px 0px 7px black;
 }
-.phone-link:focus-visible { 
-  outline: 2px solid #00e5ff; outline-offset: 3px; 
+
+.phone-link:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 3px;
   text-shadow: 0px 0px 10px#000, 0px 0px 7px black;
 }
 
@@ -372,7 +374,6 @@ a:focus-visible, button:focus-visible {
   text-shadow: 0px 0px 10px#000, 0px 0px 7px black, 0px 0px 7px darkgray;
   color: lightblue;
 }
-
 
 /* =========================================================
    FOOTER NAV (MOBILE OS VISIBILITY + LAYOUT)
@@ -383,18 +384,19 @@ a:focus-visible, button:focus-visible {
 #footer-nav { display: none; }
 
 /* Show only on Android/iOS (class is set via JS UA sniffing) */
-.mobile-os #footer-nav { display: flex;
+.mobile-os #footer-nav {
+  display: flex;
   position: fixed;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background: linear-gradient(90deg, #80e766, #00a008c6);
-    width: 100%;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
-    z-index: 5000;
-   -webkit-backdrop-filter: blur(10px);
-   backdrop-filter: blur(10px);
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #80e766, #00a008c6);
+  width: 100%;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
+  z-index: 5000;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 /* Layout on small/medium screens */
@@ -405,12 +407,12 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   background: linear-gradient(90deg, #80e766, #00a008c6);
+    background: linear-gradient(90deg, #80e766, #00a008c6);
     width: 100%;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
     z-index: 5000;
-   -webkit-backdrop-filter: blur(10px);
-   backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
 
@@ -427,11 +429,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Reserve aspect ratio so layout is stable before video loads */
-.video-container {
-  position: relative;
-}
-
-
+.video-container { position: relative; }
 
 /* Safety: never show on desktop OS, even if window is small (override) */
 .desktop-os #footer-nav { display: none !important; }
@@ -446,9 +444,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* When scrolling down, slide the bar up (hidden) */
-.navbar-industrial.nav-hidden {
-  transform: translateY(-100%);
-}
+.navbar-industrial.nav-hidden { transform: translateY(-100%); }
 
 /* Add a subtle background + shadow once the page is scrolled */
 .navbar-industrial.nav-scrolled {
@@ -460,9 +456,7 @@ a:focus-visible, button:focus-visible {
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .navbar-industrial {
-    transition: none;
-  }
+  .navbar-industrial { transition: none; }
 }
 
 /* Base smooth slide behavior */
@@ -471,7 +465,9 @@ a:focus-visible, button:focus-visible {
   transition: transform 260ms ease, background-color 200ms ease, box-shadow 200ms ease;
   will-change: transform;
 }
+
 .navbar-industrial.nav-hidden { transform: translateY(-100%); }
+
 .navbar-industrial.nav-scrolled {
   background-color: rgba(0,0,0,0.65);
   backdrop-filter: blur(6px);
@@ -492,7 +488,6 @@ a:focus-visible, button:focus-visible {
     left: 0;
     right: 0;
   }
- 
 }
 
 /* Respect reduced motion */
@@ -500,17 +495,16 @@ a:focus-visible, button:focus-visible {
   .navbar-industrial { transition: none; }
 }
 
-
-
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
 .social-icon {
   color: #1877f2;
   margin-right: 10px;
   transition: 0.3s;
 }
-.social-icon:hover {
-  color: #145db2;
-}
 
+.social-icon:hover { color: #145db2; }
 
 .social-icon-2 {
   color: #1877f2; /* default Facebook blue */
@@ -519,10 +513,7 @@ a:focus-visible, button:focus-visible {
   text-decoration: none;
 }
 
-.social-icon-2:hover {
-  color: #e4405f; /* Instagram pink */
-}
-
+.social-icon-2:hover { color: #e4405f; } /* Instagram pink */
 
 /* ===== LinkedIn Icon Button ===== */
 .social-icon-3 {
@@ -547,4 +538,13 @@ a:focus-visible, button:focus-visible {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+a h6 {
+  font-weight: 200;
+  font-size: 14px;
+  text-decoration: none;
+  font-style: italic;
+  color: white;
+  border: none;
 }
