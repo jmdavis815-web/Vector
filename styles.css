@@ -415,12 +415,7 @@ a:focus-visible, button:focus-visible {
 .video-container {
   position: relative;
 }
-#bg-video {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9; /* adjust if your source isn't 16:9 */
-  display: block;
-}
+
 
 
 /* Safety: never show on desktop OS, even if window is small (override) */
@@ -480,8 +475,7 @@ a:focus-visible, button:focus-visible {
     left: 0;
     right: 0;
   }
-  /* Reserve space under fixed nav so content doesn't jump */
-  body { padding-top: calc(var(--nav-h, 56px) + env(safe-area-inset-top, 0)); }
+ 
 }
 
 /* Respect reduced motion */
