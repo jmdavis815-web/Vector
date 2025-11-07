@@ -504,7 +504,7 @@ a:focus-visible, button:focus-visible {
 
 .social-icon {
   color: #1877f2;
-  margin: 0 5px;
+  margin-right: 10px;
   transition: 0.3s;
 }
 .social-icon:hover {
@@ -514,7 +514,7 @@ a:focus-visible, button:focus-visible {
 
 .social-icon-2 {
   color: #1877f2; /* default Facebook blue */
-  margin: 0 5px;
+  margin-right: 10px;
   transition: 0.3s;
   text-decoration: none;
 }
@@ -527,7 +527,7 @@ a:focus-visible, button:focus-visible {
 /* ===== LinkedIn Icon Button ===== */
 .social-icon-3 {
   color: #0a66c2;              /* LinkedIn blue */
-  margin: 0 5px;
+  margin-right: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
@@ -543,4 +543,8 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 30px;
 }
 
-
+#soc-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
