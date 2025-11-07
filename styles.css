@@ -374,7 +374,7 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(90deg, #85d371d7, #16831fdc);
+    background: linear-gradient(90deg, #85d37189, #16831f7f);
     width: 100%;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
     z-index: 5000;
@@ -390,7 +390,7 @@ a:focus-visible, button:focus-visible {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: linear-gradient(90deg, #85d371d7, #16831fdc);
+    background: linear-gradient(90deg, #85d37189, #16831f7f);
     width: 100%;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
     z-index: 5000;
