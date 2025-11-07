@@ -368,7 +368,19 @@ a:focus-visible, button:focus-visible {
 #footer-nav { display: none; }
 
 /* Show only on Android/iOS (class is set via JS UA sniffing) */
-.mobile-os #footer-nav { display: flex; }
+.mobile-os #footer-nav { display: flex;
+  position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #85d371d7, #16831fdc);
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
+    z-index: 5000;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+}
 
 /* Layout on small/medium screens */
 @media (max-width: 991.98px) {
