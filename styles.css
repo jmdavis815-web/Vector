@@ -387,7 +387,7 @@ a:focus-visible, button:focus-visible {
     width: 100%;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.8), 2px 2px 10px green;
     z-index: 5000;
-    -webkit-backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
   }
 }
 
@@ -402,11 +402,6 @@ a:focus-visible, button:focus-visible {
   color: white;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
-
-/* -------- DUPLICATED VISIBILITY BLOCKS (with !important) --------
-   These later rules intentionally override the earlier ones.
------------------------------------------------------------------- */
-
 
 /* Safety: never show on desktop OS, even if window is small (override) */
 .desktop-os #footer-nav { display: none !important; }
