@@ -548,3 +548,8 @@ a h6 {
   color: white;
   border: none;
 }
+
+
+#phone-bottom img {
+  max-width: 50px;
+}
