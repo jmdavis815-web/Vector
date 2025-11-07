@@ -178,9 +178,8 @@
         <div class="row">
           <!-- Background video -->
           <div class="col-12">
-            <video autoplay muted loop playsinline id="bg-video">
-              <source src="con-examp-2.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
+            <video id="bg-video" muted playsinline loop preload="none" poster="con-examp-2-poster.jpg">
+              <source data-src="con-examp-2.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -553,6 +552,32 @@
       copyright.innerHTML = `© 2023 - ${yearSpan.textContent} Vector Electrical Group LLC. All Rights Reserved.`;
     }
   });
+</script>
+
+<script>
+(function () {
+  const vids = document.querySelectorAll('video');
+
+  const loadVideo = (video) => {
+    if (video.dataset.loaded) return;
+    const src = video.querySelector('source[data-src]');
+    if (src) { src.src = src.dataset.src; src.removeAttribute('data-src'); }
+    video.load();
+    // Autoplay only for muted inline videos in view
+    video.play().catch(() => {});
+    video.dataset.loaded = '1';
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { loadVideo(v); v.play().catch(() => {}); }
+      else { v.pause(); }
+    });
+  }, { rootMargin: '200px 0px 200px 0px', threshold: 0.1 });
+
+  vids.forEach(v => io.observe(v));
+})();
 </script>
 
 
