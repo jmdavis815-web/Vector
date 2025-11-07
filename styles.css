@@ -553,3 +553,7 @@ a h6 {
 #phone-bottom img {
   max-width: 50px;
 }
+
+#vec-about-img img {
+  max-width: 100%;
+}
