@@ -454,3 +454,37 @@ a:focus-visible, button:focus-visible {
   }
 }
 
+/* Base smooth slide behavior */
+.navbar-industrial {
+  z-index: 1050;
+  transition: transform 260ms ease, background-color 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
+}
+.navbar-industrial.nav-hidden { transform: translateY(-100%); }
+.navbar-industrial.nav-scrolled {
+  background-color: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+/* Desktop: sticky works great */
+@media (min-width: 992px) {
+  .navbar-industrial { position: sticky; top: 0; }
+}
+
+/* Mobile: use fixed for reliability (address bar, rubber-band scroll, etc.) */
+@media (max-width: 991.98px) {
+  .navbar-industrial {
+    position: fixed;
+    top: env(safe-area-inset-top, 0);
+    left: 0;
+    right: 0;
+  }
+  /* Reserve space under fixed nav so content doesn't jump */
+  body { padding-top: calc(var(--nav-h, 56px) + env(safe-area-inset-top, 0)); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-industrial { transition: none; }
+}
