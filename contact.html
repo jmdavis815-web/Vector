@@ -277,16 +277,79 @@
          SCRIPTS
     ========================================================== -->
 
-    <!-- Sticky on scroll up -->
     <script>
-      let lastScrollY = window.scrollY;
-      const siteNav = document.getElementById('siteNav');
+(function () {
+  const nav = document.getElementById('siteNav');
+  if (!nav) return;
 
-      window.addEventListener('scroll', () => {
-        siteNav.style.top = window.scrollY > lastScrollY ? '-100px' : '0';
-        lastScrollY = window.scrollY;
-      });
-    </script>
+  // --- utils
+  function getScrollY() {
+    return window.pageYOffset || document.documentElement.scrollTop || 0;
+  }
+  function setNavHeightVar() {
+    // keep body padding in sync on mobile (fixed header)
+    const h = nav.offsetHeight;
+    document.documentElement.style.setProperty('--nav-h', h + 'px');
+  }
+
+  // --- init sizing
+  window.addEventListener('load', setNavHeightVar, { once: true });
+  window.addEventListener('resize', setNavHeightVar);
+  // Update when Bootstrap collapses open/close (height changes)
+  document.addEventListener('shown.bs.collapse', setNavHeightVar);
+  document.addEventListener('hidden.bs.collapse', setNavHeightVar);
+
+  // --- hide/show logic
+  let lastY = getScrollY();
+  const HIDE_THRESHOLD = 10;   // px movement before toggling
+  const SCROLL_TRIGGER = 4;    // add bg/shadow after a tiny scroll
+
+  function onScroll() {
+    const y = getScrollY();
+
+    // background/shadow after a tiny scroll
+    if (y > SCROLL_TRIGGER) nav.classList.add('nav-scrolled');
+    else nav.classList.remove('nav-scrolled');
+
+    // hide on down, show on up (with threshold)
+    if (y > lastY + HIDE_THRESHOLD) {
+      nav.classList.add('nav-hidden');
+    } else if (y < lastY - HIDE_THRESHOLD) {
+      nav.classList.remove('nav-hidden');
+    }
+    lastY = y;
+  }
+
+  // Touch support for mobile address-bar jitter (more responsive than scroll alone)
+  let lastTouchY = null;
+  function onTouchStart(e) {
+    if (e.touches && e.touches.length) lastTouchY = e.touches[0].clientY;
+  }
+  function onTouchMove(e) {
+    if (e.touches && e.touches.length && lastTouchY !== null) {
+      const current = e.touches[0].clientY;
+      const delta = current - lastTouchY; // >0 means finger moved down
+      if (delta > 8) nav.classList.remove('nav-hidden');   // scrolling up -> show
+      else if (delta < -8) nav.classList.add('nav-hidden'); // scrolling down -> hide
+      lastTouchY = current;
+    }
+  }
+
+  // ensure visible on load
+  nav.classList.remove('nav-hidden');
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('touchstart', onTouchStart, { passive: true });
+  window.addEventListener('touchmove', onTouchMove, { passive: true });
+
+  // initial state if page loads mid-scroll (restored position)
+  window.addEventListener('load', () => {
+    const y = getScrollY();
+    if (y > SCROLL_TRIGGER) nav.classList.add('nav-scrolled');
+    setNavHeightVar();
+  });
+})();
+</script>
 
     <!-- Fix hover “sticking” on touch devices -->
     <script>
