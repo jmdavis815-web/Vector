@@ -10,6 +10,8 @@
     <!-- ===== Title & Favicon ===== -->
     <title>Vector Electrical Group</title>
     <link id="tab-logo" rel="icon" type="image/png" href="logo-tab.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <!-- ===== Styles ===== -->
     <link rel="stylesheet" href="styles.css" />
@@ -137,33 +139,27 @@
 
           <!-- Right social icons -->
           <span id="social" class="text-center navbar-text">
-            <a href="#">
-              <img
-                id="soc-img"
-                src="logo-tab-2.webp"
-                width="35px"
-                alt="facebook link"
-                title="Facebook"
-              />
-            </a>
-            <a href="#">
-              <img
-                id="soc-img"
-                src="logo-tab-2.webp"
-                width="35px"
-                alt="instagram link"
-                title="Instagram"
-              />
-            </a>
-            <a href="#">
-              <img
-                id="soc-img"
-                src="logo-tab-2.webp"
-                width="35px"
-                alt="linkedin link"
-                title="Linkedin"
-              />
-            </a>
+            <a href="https://www.facebook.com/61550591603242" rel="noopener noreferrer" alt="Facebook Icon" target="_blank" title="Visit us on Facebook" class="social-icon">
+  <i class="fab fa-facebook fa-2x social-icon"></i>
+</a>
+
+            <a href="https://www.instagram.com/vectorelectricalgroup/"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Visit us on Instagram"
+   class="social-icon-2">
+   <i class="fab fa-instagram fa-2x social-icon-2"></i>
+</a>
+
+
+            <a href="https://www.linkedin.com/company/vector-electrical-group"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Connect with us on LinkedIn"
+   class="social-icon-3 linkedin">
+   <i class="fab fa-linkedin fa-2x social-icon-3"></i>
+</a>
+
           </span>
         </div>
       </div>
@@ -178,7 +174,7 @@
           <!-- Background video -->
           <div class="col-12">
             <video id="bg-video" muted playsinline loop preload="none" poster="con-examp-2-poster.jpg">
-              <source data-src="con-examp-2.mp4" type="video/mp4" />
+              <source src="con-examp-2.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -241,6 +237,9 @@
 
     <br /><br /><br />
 
+    
+
+
 
     <!-- =========================================================
          FOOTER CONTENT
@@ -271,9 +270,9 @@
           <div class="card-header col-12 col-md-12 col-lg-4">
             <h5>Contact</h5>
             <p>
-              <a class="phone-link" href="tel:+15155004097" aria-label="Call Vector Electrical Group" title="Call Us">
-                <img src="phone-img.png" width="10px"><br>
-                (206) 556–5995
+              <a class="phone-link" href="tel:+12065565995" aria-label="Call Vector Electrical Group" title="Call Us">
+                <img src="phone-img.png" alt="Phone" width="10px"><br>
+                (206) 556-5995
               </a><br>
               <a id="email" href="mailto:admin@vectorelectricalgroup.com" title="Email">
                 admin@vectorelectricalgroup.com
@@ -283,16 +282,18 @@
 
           <!-- Logos -->
           <div id="logos" class="row card-body">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 footer-logo">
               <img src="omwbe-logo.webp" alt="omwbe Logo" width="125px" />
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <br>
+            <div class="col-12 col-md-6 col-lg-4 footer-logo">
               <img src="ibewlogo-1.webp" alt="ibew Logo" width="125px" />
             </div>
-            <div class="col-12 col-md-12 col-lg-4">
+            <br>
+            <div class="col-12 col-md-12 col-lg-4 footer-logo">
               <img src="neca-logo2.webp" alt="neca Logo" width="125px" />
             </div>
-            <br /><br />
+            
           </div>
 
           <!-- Copyright -->
@@ -350,6 +351,12 @@
     ========================================================== -->
 
     <script src="app.js" defer></script>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0">
+    </script>
+
 
 
   </body>
