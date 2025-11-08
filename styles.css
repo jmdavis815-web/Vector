@@ -353,7 +353,7 @@ a:focus-visible, button:focus-visible {
 #logos { display: flex; justify-content: space-around; }
 
 #copyright {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 200;
   margin: 50px;
 }
